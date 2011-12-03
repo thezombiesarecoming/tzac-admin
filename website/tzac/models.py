@@ -4,10 +4,17 @@ from django.core.urlresolvers import reverse
 from django.db import models
 
 
+class TitleMixin(models.Model):
+    class Meta:
+        abstract = True
+
+    title = models.CharField(max_length=250, default="")
+
+    def __unicode__(self):
+        return self.title
 
 # Create your models here.
-class Page(models.Model):
-    title = models.CharField(max_length=250)
+class Page(TitleMixin, models.Model):
     body = models.TextField()
 
     sections = models.ManyToManyField(Section, null=True, blank=True,
@@ -15,8 +22,13 @@ class Page(models.Model):
 
     objects = models.Manager()
 
-    def __unicode__(self):
-        return self.title
-
     def get_absolute_url(self):
         return reverse("tzac_detail", kwargs={"pk": self.pk})
+
+
+class List(TitleMixin, models.Model):
+    pass
+
+
+class ListItem(TitleMixin, models.Model):
+    list = models.ForeignKey(List, related_name="items")
