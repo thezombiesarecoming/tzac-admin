@@ -13,8 +13,6 @@ class Page(models.Model):
     sections = models.ManyToManyField(Section, null=True, blank=True,
             related_name="%(app_label)s_%(class)s_alternates")
 
-    with_section = SectionSlugManager(section_field="sections")
-
     objects = models.Manager()
 
     def __unicode__(self):
