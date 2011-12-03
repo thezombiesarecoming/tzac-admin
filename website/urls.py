@@ -17,4 +17,5 @@ urlpatterns = patterns('',
     url(r'^admin_tools/', include('admin_tools.urls')),
 
     url(r'^page/', include('tzac.urls')),
+    url(r'^section/', include('tzac_sections.urls')),
 )
