@@ -1,5 +1,12 @@
 from django.conf.urls.defaults import patterns, include, url
 
+# API set
+from tastypie.api import Api
+from tzac.api import *
+v1_api = Api(api_name="v1")
+v1_api.register(ListResource())
+v1_api.register(ListItemResource())
+
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
@@ -18,4 +25,5 @@ urlpatterns = patterns('',
 
     url(r'^page/', include('tzac.urls')),
     url(r'^section/', include('tzac_sections.urls')),
+    url(r'^api/', include(v1_api.urls)),
 )
