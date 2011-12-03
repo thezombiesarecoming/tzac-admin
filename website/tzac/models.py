@@ -12,5 +12,7 @@ class Page(models.Model):
 
     with_section = SectionSlugManager(section_field="sections")
 
+    objects = models.Manager()
+
     def __unicode__(self):
         return self.title
