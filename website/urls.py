@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.conf.urls.defaults import patterns, include, url
 
 # API set
@@ -27,4 +28,8 @@ urlpatterns = patterns('',
     url(r'^section/', include('tzac_sections.urls')),
     url(r'^contacts/', include('tzac_contacts.urls')),
     url(r'^api/', include(v1_api.urls)),
+
+    # TODO: move this to S3 or some such
+    url(r'^static/(?P<path>.*)$',
+        'django.contrib.staticfiles.views.serve')
 )

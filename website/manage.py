@@ -7,7 +7,7 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 if "DJANGO_SETTINGS_MODULE" not in os.environ:
-    os.environ["DJANGO_SETTINGS_MODULE"] = "website.settings.development"
+    os.environ["DJANGO_SETTINGS_MODULE"] = "website.settings"
 
 try:
     __import__(os.environ["DJANGO_SETTINGS_MODULE"], globals(), locals())
