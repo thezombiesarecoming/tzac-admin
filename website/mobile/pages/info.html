@@ -40,17 +40,14 @@
             </div>
             <div data-role="content">
                 <p>
-                    <ul data-role="listview" data-inset="true">
+                    <ul data-role="listview" data-inset="true" id="infolist">
                         
                         <li data-role="list-divider">
                             Preparing Wilco Information
                         </li>
-                        <li>
-                            <a href="about.html">About</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">Contact</a>
-                        </li>
+                        {{each item in it.object_list}}
+                        <li><a href="{{=item.url}}">{{=item.title}}</a></li>
+                        {{/each}}
                         <li data-role="list-divider">
                             Be Connected
                         </li>
@@ -58,7 +55,7 @@
                             <a href="#">Be Ready Blog</a>
                         </li>
                         <li>
-                            <a rel="external" href="http://facebook.com/preparingwilco">Facebook</a>
+                            <a rel="external" href="http://facebook.com/preparingwilco">Preparing Wilco Facebook</a>
                         </li>
                         <li>
                             <a rel="external" href="http://twitter.com/wilcoalerts">Wilco Alerts Twitter</a>
