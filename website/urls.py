@@ -8,8 +8,6 @@ v1_api = Api(api_name="v1")
 v1_api.register(ListResource())
 v1_api.register(ListItemResource())
 
-from website.settings import helpers
-
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
@@ -33,6 +31,5 @@ urlpatterns = patterns('',
 
     # TODO: move this to S3 or some such
     url(r'^static/(?P<path>.*)$',
-        'django.contrib.staticfiles.views.serve',
-        {"document_root": helpers.project_dir()})
+        'django.contrib.staticfiles.views.serve')
 )
