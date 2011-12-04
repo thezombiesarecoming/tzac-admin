@@ -28,6 +28,9 @@ class Notification(models.Model):
 
 
 def post_to_couch_signal(sender, instance=None, created=None, **kwargs):
+    print "signal fired"
+    print "instance: %s" % instance
+    print "created: %s" % created
     if instance and created:
         instance.post_to_couch()
 
