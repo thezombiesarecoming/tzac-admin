@@ -95,6 +95,14 @@ $( '#home' ).live( 'pageinit',function(event,data){
   })
 });
 
+$('#optin').live("pageinit", function(event, data) {
+  $.get("/subscribers/create_subscribers/", function(res) {
+    var token = $("input[name='csrfmiddlewaretoken']").val();
+    $("#csrfmiddlewaretoken").val(token);
+    $("button[name='submit']").removeAttr("disabled");
+  })
+});
+
 $(document).live( 'pageinit',function(event,data){
     $(".replace-content").live('click',function(event,data){
          event.preventDefault();
