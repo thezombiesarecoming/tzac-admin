@@ -22,8 +22,11 @@ class Notification(models.Model):
             "text": self.body,
             "title": self.subject,
         })
-        response = requests.put(settings.NOTIFICATION_ENDPOINT, data=payload)
-        print response
+        headers = {
+            "content-type": "application/json",
+        }
+        response = requests.post(settings.NOTIFICATION_ENDPOINT,
+                data=payload, headers=headers)
 
 
 def post_to_couch_signal(sender, instance=None, created=None, **kwargs):
