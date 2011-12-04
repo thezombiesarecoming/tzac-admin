@@ -35,4 +35,8 @@ class Contact(models.Model):
             "type": str(self.type),
             "address": self.address,
             "phone": self.phone,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [self.lon, self.lat],
+            },
         }
