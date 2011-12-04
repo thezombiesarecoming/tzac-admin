@@ -80,3 +80,17 @@ $( '#info' ).live( 'pageinit',function(event,data){
       $("#infolist").html(theList(res)).trigger('create');
   })
 });
+
+$( '#threats' ).live( 'pageinit',function(event,data){
+    var theList = doT.template($("#threatlist").html());
+  $.get("/section/1/",function(res){
+      $("#threatlist").html(theList(res)).trigger('create');
+  })
+});
+
+$( '#home' ).live( 'pageinit',function(event,data){
+    var theList = doT.template($("#random-fact").html());
+  $.get("/api/v1/listitem/3/?format=json",function(res){
+      $("#random-fact").html(theList(res)).trigger('create');
+  })
+});
