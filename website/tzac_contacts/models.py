@@ -1,4 +1,4 @@
-from django.db import models
+from django.contrib.gis.db import models
 import json
 
 from tzac.models import TitleMixin
@@ -19,6 +19,11 @@ class Contact(models.Model):
     address = models.TextField()
     phone = models.CharField(max_length=20)
     active = models.BooleanField()
+
+    lon = models.FloatField()
+    lat = models.FloatField()
+
+    objects = models.GeoManager()
 
     def __unicode__(self):
         return self.name
