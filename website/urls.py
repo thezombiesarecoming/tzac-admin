@@ -23,8 +23,10 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^admin_tools/', include('admin_tools.urls')),
-
+    url(r'^confirm_notice/', 'website.views.confirm_notice',
+        name='confirm_notice'),
     url(r'^page/', include('tzac.urls')),
+    url(r'^subscribers/', include('tzac_subscribers.urls')),
     url(r'^section/', include('tzac_sections.urls')),
     url(r'^contacts/', include('tzac_contacts.urls')),
     url(r'^api/', include(v1_api.urls)),

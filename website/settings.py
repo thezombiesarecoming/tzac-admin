@@ -13,6 +13,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 from .helpers import project_dir
+ADMIN_TOOLS_INDEX_DASHBOARD = 'website.dashboard.CustomIndexDashboard'
 
 
 DATABASES = {
@@ -109,6 +110,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'website.urls'
 
 TEMPLATE_DIRS = (
+    project_dir('templates'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -138,6 +140,8 @@ INSTALLED_APPS = (
     'south',
     'tzac',
     'tzac_contacts',
+    'tzac_notifications',
+    'tzac_subscribers'
 )
 
 # A sample logging configuration. The only tangible logging
