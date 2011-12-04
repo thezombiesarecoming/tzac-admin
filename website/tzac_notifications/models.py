@@ -16,21 +16,20 @@ class Notification(models.Model):
 
     def post_to_couch(self):
         if not hasattr(settings, "NOTIFICATION_ENDPOINT"):
-            print "settings does not have NOTIFICATION_ENDPOINT?"
             return
 
         payload = json.dumps({
             "text": self.body,
             "title": self.subject,
         })
-        response = requests.put(settings.NOTIFICATION_ENDPOINT, data=payload)
-        print response
+        headers = {
+            "content-type": "application/json",
+        }
+        response = requests.post(settings.NOTIFICATION_ENDPOINT,
+                data=payload, headers=headers)
 
 
 def post_to_couch_signal(sender, instance=None, created=None, **kwargs):
-    print "signal fired"
-    print "instance: %s" % instance
-    print "created: %s" % created
     if instance and created:
         instance.post_to_couch()
 
