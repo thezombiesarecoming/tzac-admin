@@ -101,8 +101,8 @@ $( '#home' ).live( 'pageinit',function(event,data){
 function makeReplaceable(){
     $(".replace-content").live('click',function(event,data){
          event.preventDefault();
-         $.get("someurl",function(res){
+         $.get($(this).attr('href'),function(res){
               $(".ui-content").html(res);
-          })
+          });
     });      
 }
