@@ -52,7 +52,10 @@
                     <label for="twitter">Twitter Handle:</label>
                     <input type="text" name="email" id="twitter" value=""  />
                 </div>
-                <button value="submit-value" name="submit" data-theme="b" type="submit" aria-disabled="false">Submit</button>
+                <div style="display:none;">
+                    <input type="hidden" id="csrfmiddlewaretoken" name="csrfmiddlewaretoken" value="" />
+                </div>
+                <button value="submit-value" disabled name="submit" data-theme="b" type="submit" aria-disabled="false">Submit</button>
             </form>
         </div>
         <div data-role="footer" data-position="fixed">
