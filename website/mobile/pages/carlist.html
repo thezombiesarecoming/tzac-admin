@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Vehicle Checklist</title> 
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" href="../assets/css/wilco.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile.structure-1.0rc2.min.css" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="../assets/js/doT.js"></script>
+        <script type="text/javascript" src="../assets/js/site.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+</head> 
+<body> 
+
+<div data-role="page" data-theme="b" id="carlist">
+        <div data-role="header" data-theme="b">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="home.html">Home</a> 
+                    </li>
+                    <li>
+                        <a href="ready.html">Be Ready</a>
+                    </li>
+                    <li>
+                        <a href="local.html">Local</a>
+                    </li>
+                    <li>
+                        <a href="optin.html">Opt-In</a>
+                    </li>
+                    <li>
+                        <a href="info.html">Info</a>
+                    </li>
+                </ul>
+            </div>
+            <h1>Vehicle Emergency Kit Checklist</h1>
+        </div>
+        <div data-role="content">
+            <p>In case you are stranded, keep a kit of emergency supplies in your car. This kit should include:</p>
+            <div id="checklist-list">
+                <ul data-role="listview" data-inset="true" class="prepare-checks">
+                    <li><a href="#">Jumper cables</a> <input type="checkbox" name="chkList" value="cables" /></li>
+                    <li><a href="#">Flashlights and extra batteries</a> <input type="checkbox" name="chkList" value="flashlights" /></li>
+                    <li><a href="#">First aid kit and necessary medications in case you are away from home for a prolonged time</a> <input type="checkbox" name="chkList" value="firstaid" /></li>
+                    <li><a href="#">Food items containing protein such as nuts and energy bars; canned fruit and a portable can opener</a> <input type="checkbox" name="chkList" value="food" /></li>
+                    <li><a href="#">Water for each person and pet in your car</a> <input type="checkbox" name="chkList" value="Water" /></li>
+                    <li><a href="#">AM/FM radio to listen to traffic reports and emergency messages</a> <input type="checkbox" name="chkList" value="radio" /></li>
+                    <li><a href="#">Cat litter or sand for better tire traction</a> <input type="checkbox" name="chkList" value="catlitter" /></li>
+                    <li><a href="#">Shovel</a> <input type="checkbox" name="chkList" value="Shovel" /></li>
+                    <li><a href="#">Ice scraper</a> <input type="checkbox" name="chkList" value="scraper" /></li>
+                    <li><a href="#">Warm clothes, gloves, hat, sturdy boots, jacket and an extra change of clothes</a> <input type="checkbox" name="chkList" value="clothes" /></li>
+                    <li><a href="#">Blankets or sleeping bags</a> <input type="checkbox" name="chkList" value="blankets" /></li> 
+                    <li data-role="list-divider">Also consider:</li>
+                    <li><a href="#">A fully-charged cell phone and phone charger</a> <input type="checkbox" name="chkList" value="cellphone" /></li> 
+                    <li><a href="#">Flares or reflective triangle</a> <input type="checkbox" name="chkList" value="flares" /></li>
+                    <li><a href="#">Baby formula and diapers if you have a small child</a> <input type="checkbox" name="chkList" value="baby" /></li>
+                </ul>
+            </div>
+            <p>Be prepared for an emergency by keeping your gas tank full and if you find yourself stranded, be safe and stay in your car, put on your flashers, call for help and wait until it arrives.</p>
+        </div>
+        <div data-role="footer" data-position="fixed">
+        </div>
+</div>
+
+</body>
+</html>
