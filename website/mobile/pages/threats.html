@@ -42,7 +42,7 @@
             <div id="threatlist">
                 <ul data-role="listview" data-theme="b">
                 {{each item in it.object_list}}
-                    <li><a href="{{=item.url}}">{{=item.title}}</a></li>
+                    <li><a href="{{=item.url}}" class="replace-content">{{=item.title}}</a></li>
                 {{/each}}
                 </ul>
             </div>

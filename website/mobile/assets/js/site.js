@@ -75,7 +75,7 @@ $( '#ready' ).live( 'pageinit',function(event,data){
 });
 
 $( '#info' ).live( 'pageinit',function(event,data){
-    var theList = doT.template($("#infolist").html().replace("%7B","{").replace("%7D","}"));
+    var theList = doT.template($("#infolist").html().replace("/\%7B/g","{").replace("/\%7D/g","}"));
   $.get("/section/3/",function(res){
       $("#infolist").html(theList(res)).trigger('create');
   })
@@ -89,7 +89,7 @@ $( '#threats' ).live( 'pageinit',function(event,data){
 });
 
 $( '#home' ).live( 'pageinit',function(event,data){
-    var theList = doT.template($("#random-fact").html().replace("%7B","{").replace("%7D","}"));
+    var theList = doT.template($("#random-fact").html());
   $.get("/api/v1/listitem/3/?format=json",function(res){
       $("#random-fact").html(theList(res)).trigger('create');
   })
