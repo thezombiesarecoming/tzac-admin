@@ -9,12 +9,23 @@ To activate your index dashboard add the following to your settings.py::
 And to activate the app index dashboard::
     ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'website.dashboard.CustomAppIndexDashboard'
 """
+import pdb
 
 from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 
 from admin_tools.dashboard import modules, Dashboard, AppIndexDashboard
 from admin_tools.utils import get_admin_site_name
+
+from tzac_notifications.forms import NotificationForm
+
+class NotificationDashboardModule(modules.DashboardModule):
+    title = _('Dispatch Notification')
+    template = 'notification_dm.html'
+    is_empty = False
+
+    def init_with_context(self, context):
+        context['form'] = NotificationForm()
 
 
 class CustomIndexDashboard(Dashboard):
@@ -23,6 +34,7 @@ class CustomIndexDashboard(Dashboard):
     """
     def init_with_context(self, context):
         site_name = get_admin_site_name(context)
+        self.children.append(NotificationDashboardModule())
         # append a link list module for "quick links"
         self.children.append(modules.LinkList(
             _('Quick links'),
