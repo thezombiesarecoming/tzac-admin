@@ -177,3 +177,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     # required by django-admin-tools
     'django.core.context_processors.request',
 )
+
+COUCH_HOST = "thezombiesarecoming.iriscouch.com"
+COUCH_DB = "thezombiesarecoming"
+NOTIFICATION_ENDPOINT = "http://%s/%s/" % (COUCH_HOST, COUCH_DB)
