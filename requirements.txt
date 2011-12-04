@@ -9,3 +9,4 @@ armstrong.utils.backends==1.0.0
 # django-mptt==0.5.pre # installed by armstrong.core.arm_sections
 gunicorn==0.13.4
 django-admin-tools==0.4.1
+psycopg2==2.4.2
