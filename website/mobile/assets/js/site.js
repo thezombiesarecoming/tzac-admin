@@ -80,3 +80,10 @@ $( '#info' ).live( 'pageinit',function(event,data){
       $("#infolist").html(theList(res)).trigger('create');
   })
 });
+
+$( '#threats' ).live( 'pageinit',function(event,data){
+    var theList = doT.template($("#threatlist").html());
+  $.get("/section/1/",function(res){
+      $("#threatlist").html(theList(res)).trigger('create');
+  })
+});
