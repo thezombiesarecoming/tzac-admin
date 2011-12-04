@@ -24,7 +24,7 @@ class Page(TitleMixin, models.Model):
     objects = models.Manager()
 
     class Meta:
-        ordering = ["-weight", ]
+        ordering = ["weight", ]
 
     def get_absolute_url(self):
         return reverse("tzac_detail", kwargs={"pk": self.pk})
