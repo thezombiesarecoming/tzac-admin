@@ -68,28 +68,28 @@ wilco.saveChecklist = function(store) {
 };
 
 $( '#ready' ).live( 'pageinit',function(event,data){
-    var theList = doT.template($("#ready-list-template").html());
+    var theList = doT.template($("#ready-list-template").html().replace("%7B","{").replace("%7D","}"));
   $.get("/section/2/",function(res){
       $("#ready-list").html(theList(res)).trigger('create');
   })
 });
 
 $( '#info' ).live( 'pageinit',function(event,data){
-    var theList = doT.template($("#infolist").html());
+    var theList = doT.template($("#infolist").html().replace("%7B","{").replace("%7D","}"));
   $.get("/section/3/",function(res){
       $("#infolist").html(theList(res)).trigger('create');
   })
 });
 
 $( '#threats' ).live( 'pageinit',function(event,data){
-    var theList = doT.template($("#threatlist").html());
+    var theList = doT.template($("#threatlist").html().replace("%7B","{").replace("%7D","}"));
   $.get("/section/1/",function(res){
       $("#threatlist").html(theList(res)).trigger('create');
   })
 });
 
 $( '#home' ).live( 'pageinit',function(event,data){
-    var theList = doT.template($("#random-fact").html());
+    var theList = doT.template($("#random-fact").html().replace("%7B","{").replace("%7D","}"));
   $.get("/api/v1/listitem/3/?format=json",function(res){
       $("#random-fact").html(theList(res)).trigger('create');
   })

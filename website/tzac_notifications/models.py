@@ -11,15 +11,20 @@ class Notification(models.Model):
     subject = models.CharField(max_length=200)
     body = models.TextField()
 
+    def __unicode__(self):
+        return self.subject
+
     def post_to_couch(self):
         if not hasattr(settings, "NOTIFICATION_ENDPOINT"):
+            print "settings does not have NOTIFICATION_ENDPOINT?"
             return
 
         payload = json.dumps({
             "text": self.body,
             "title": self.subject,
         })
-        requests.put(settings.NOTIFICATION_ENDPOINT, data=payload)
+        response = requests.put(settings.NOTIFICATION_ENDPOINT, data=payload)
+        print response
 
 
 def post_to_couch_signal(sender, instance=None, created=None, **kwargs):

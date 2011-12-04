@@ -1,6 +1,8 @@
 from tzac_notifications.forms import NotificationForm
 from tzac_notifications.models import Notification
 from django.http import HttpRequest
+from django.shortcuts import redirect
+
 
 def confirm_notice(request):
     if request.method == 'POST':
@@ -10,4 +12,4 @@ def confirm_notice(request):
             Notification.objects.create(
                 subject = cd['subject'],
                 body = cd['body'])
-    return HttpRequest('admin')
+    return redirect("/admin")
