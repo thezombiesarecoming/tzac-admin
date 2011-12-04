@@ -10,4 +10,4 @@ def confirm_notice(request):
             Notification.objects.create(
                 subject = cd['subject'],
                 body = cd['body'])
-    return HttpRequest('admin')
+    return redirect("/admin")
