@@ -68,7 +68,7 @@ wilco.saveChecklist = function(store) {
 };
 
 $( '#ready' ).live( 'pageinit',function(event,data){
-    var theList = doT.template($("#ready-list-template").html().replace(/\%7B/g,"{").replace(/\%7D/g,"}"));
+    var theList = doT.template($("#ready-list").html().replace(/\%7B/g,"{").replace(/\%7D/g,"}"));
   $.get("/section/2/",function(res){
       $("#ready-list").html(theList(res)).trigger('create');
   })
