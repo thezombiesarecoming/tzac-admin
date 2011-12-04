@@ -16,6 +16,7 @@ class Notification(models.Model):
 
     def post_to_couch(self):
         if not hasattr(settings, "NOTIFICATION_ENDPOINT"):
+            print "settings does not have NOTIFICATION_ENDPOINT?"
             return
 
         payload = json.dumps({
