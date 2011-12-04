@@ -73,3 +73,10 @@ $( '#ready' ).live( 'pageinit',function(event,data){
       $("#ready-list").html(theList(res)).trigger('create');
   })
 });
+
+$( '#info' ).live( 'pageinit',function(event,data){
+    var theList = doT.template($("#infolist").html());
+  $.get("/section/3/",function(res){
+      $("#infolist").html(theList(res)).trigger('create');
+  })
+});
