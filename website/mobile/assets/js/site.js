@@ -94,3 +94,13 @@ $( '#home' ).live( 'pageinit',function(event,data){
       $("#random-fact").html(theList(res)).trigger('create');
   })
 });
+
+$(document).live( 'pageinit',function(event,data){
+    $(".replace-contact").live('click',function(event,data){
+         event.preventDefault();
+         $.get("someurl",function(res){
+              $(".ui-content").html(res);
+          })
+    });
+      
+});
