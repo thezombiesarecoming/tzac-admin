@@ -2,7 +2,8 @@
 {% block module_content %}
 <ul>
 	{% spaceless %}
-	<form method="POST">{% csrf_token %}
+	<form method="POST" action="{% url confirm_notice %}">
+		{% csrf_token %}
 		{{ form.as_ul }}
 		<input type="submit" value="Submit"/>
 	</form>

@@ -9,8 +9,6 @@ To activate your index dashboard add the following to your settings.py::
 And to activate the app index dashboard::
     ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'website.dashboard.CustomAppIndexDashboard'
 """
-import pdb
-
 from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 

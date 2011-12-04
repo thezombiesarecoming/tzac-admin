@@ -140,7 +140,8 @@ INSTALLED_APPS = (
     'south',
     'tzac',
     'tzac_contacts',
-    'tzac_notifications'
+    'tzac_notifications',
+    'tzac_subscribers'
 )
 
 # A sample logging configuration. The only tangible logging
