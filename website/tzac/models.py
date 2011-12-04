@@ -16,6 +16,7 @@ class TitleMixin(models.Model):
 # Create your models here.
 class Page(TitleMixin, models.Model):
     body = models.TextField()
+    weight = models.IntegerField(default=0)
 
     sections = models.ManyToManyField(Section, null=True, blank=True,
             related_name="%(app_label)s_%(class)s_alternates")
