@@ -1,0 +1,100 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Preparedness Checklist</title> 
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" href="../assets/css/wilco.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile.structure-1.0rc2.min.css" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="../assets/js/doT.js"></script>
+        <script type="text/javascript" src="../assets/js/site.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+</head> 
+<body> 
+
+<div data-role="page" data-theme="b" id="checklist">
+        <div data-role="header" data-theme="b">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="home.html">Home</a> 
+                    </li>
+                    <li>
+                        <a href="ready.html">Be Ready</a>
+                    </li>
+                    <li>
+                        <a href="local.html">Local</a>
+                    </li>
+                    <li>
+                        <a href="optin.html">Opt-In</a>
+                    </li>
+                    <li>
+                        <a href="info.html">Info</a>
+                    </li>
+                </ul>
+            </div>
+            <h1>Checklist</h1>
+        </div>
+        <div data-role="content">
+            <div id="checklist-list">
+                <ul data-role="listview" data-inset="true" class="prepare-checks">
+                    <li data-role="list-divider">Recommended Items to Include in a Basic Ready Kit</li>
+                    <li><a href="#">Water</a> <input type="checkbox" name="chkList" value="Water" />
+                        <span>At least three gallons per person, for drinking and sanitation</span></li>  
+                    <li><a href="#">Food</a> <input type="checkbox" name="chkList" value="Food" />
+                        <span>At least a 3-day supply of non-perishable food</span></li>
+                    <li><a href="#">Can opener</a> <input type="checkbox" name="chkList" value="Canopener" />
+                        <span>For food, if kit contains canned food</span></li>
+                    <li><a href="#">Radio</a> <input type="checkbox" name="chkList" value="Radio" />
+                        <span>Battery-powered or hand crank NOAA Weather Radio with tone alert and extra batteries</span></li>
+                    <li><a href="#">Flashlight</a> <input type="checkbox" name="chkList" value="Flashlight" />
+                        <span>and extra batteries</span></li>
+                    <li><a href="#">First aid kit</a> <input type="checkbox" name="chkList" value="Firstaid" /></li>
+                    <li><a href="#">Whistle</a> <input type="checkbox" name="chkList" value="Whistle" />
+                        <span>To signal for help</span></li>
+                    <li><a href="#">Face mask</a> <input type="checkbox" name="chkList" value="Facemask" />
+                        <span>To help filter contaminated air and plastic sheeting and duct tape to shelter in place</span></li>
+                    <li><a href="#">Moist towelettes, garbage bags and plastic ties</a> <input type="checkbox" name="chkList" value="towelettes" />
+                        <span>For personal sanitation</span></li>
+                    <li><a href="#">Wrench or pliers</a> <input type="checkbox" name="chkList" value="Wrench" />
+                        <span>To turn off utilities</span></li>
+                    <li><a href="#">Local maps</a> <input type="checkbox" name="chkList" value="maps" /></li> 
+                </ul>
+                <ul data-role="listview" data-inset="true" class="prepare-checks"> 
+                    <li data-role="list-divider">Additional Items to Consider Adding to a Ready Kit</li> 
+                    <li><a href="#">Prescription medications and glasses</a> <input type="checkbox" name="chkList" value="medicine" /></li>  
+                    <li><a href="#">Infant formula and diapers</a> <input type="checkbox" name="chkList" value="infant" /></li>
+                    <li><a href="#">Pet food and extra water</a> <input type="checkbox" name="chkList" value="petfood" />
+                        <span>For your pet</span></li>
+                    <li><a href="#">Important family documents</a> <input type="checkbox" name="chkList" value="documents" />
+                        <span>Such as copies of insurance policies, identification and bank account</span></li>
+                    <li><a href="#">Records in a waterproof, portable container</a> <input type="checkbox" name="chkList" value="Records" /></li>
+                    <li><a href="#">Cash or traveler's checks and change</a> <input type="checkbox" name="chkList" value="Cash" /></li>
+                    <li><a href="#">Emergency reference material</a> <input type="checkbox" name="chkList" value="emergencyref" />
+                        <span>Such as a first aid book or information from Ready.gov</span></li>
+                    <li><a href="#">Sleeping bag or warm blanket</a> <input type="checkbox" name="chkList" value="sleepingbag" />
+                        <span>For each person. Consider adding bedding if you live in a cold-weather climate</span></li>
+                    <li><a href="#">Complete change of clothing</a> <input type="checkbox" name="chkList" value="clothing" />
+                        <span>Include a long sleeved shirt, long pants and sturdy shoes</span></li>
+                    <li><a href="#">Consider adding clothing if you live in a cold-weather climate</a> <input type="checkbox" name="chkList" value="coldclothing" /></li>
+                    <li><a href="#">Household chlorine bleach and medicine dropper</a> <input type="checkbox" name="chkList" value="chlorine" /></li>
+                    <li><a href="#">Fire extinguisher</a> <input type="checkbox" name="chkList" value="Fireextinguisher" /></li>
+                    <li><a href="#">Matches</a> <input type="checkbox" name="chkList" value="Matches" />
+                        <span>In a waterproof container</span></li>
+                    <li><a href="#">Feminine supplies and personal hygiene items</a> <input type="checkbox" name="chkList" value="Feminine" /></li>
+                    <li><a href="#">Mess kits, paper cups, plates, plastic utensils, paper towels</a> <input type="checkbox" name="chkList" value="messkit" /></li>
+                    <li><a href="#">Paper and pencil</a> <input type="checkbox" name="chkList" value="Paper" /></li>
+                    <li><a href="#">Books, games, puzzles</a> <input type="checkbox" name="chkList" value="Books" />
+                        <span>or other activities for children</span></li>          
+                </ul>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+        </div>
+</div>
+
+</body>
+</html>

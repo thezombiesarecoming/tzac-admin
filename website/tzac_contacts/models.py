@@ -18,7 +18,7 @@ class Contact(models.Model):
     type = models.ForeignKey(Type)
     address = models.TextField()
     phone = models.CharField(max_length=20)
-    active = models.BooleanField()
+    active = models.BooleanField(default=True)
 
     lon = models.FloatField()
     lat = models.FloatField()
@@ -35,4 +35,8 @@ class Contact(models.Model):
             "type": str(self.type),
             "address": self.address,
             "phone": self.phone,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [self.lon, self.lat],
+            },
         }
