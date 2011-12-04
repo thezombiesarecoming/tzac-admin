@@ -15,7 +15,7 @@
 </head> 
 <body> 
 
-<div data-role="page" data-theme="b" id="ready">
+<div data-role="page" data-theme="b" id="threats">
         <div data-role="header" data-theme="b">
             <div data-role="navbar">
                 <ul>
@@ -39,14 +39,12 @@
             <h1>Be Ready</h1>
         </div>
         <div data-role="content">
-            <div class="dashboard">
-                <a href="checklist.html" class="main-btn">Home Checklist</a>
-                <a href="carlist.html" class="main-btn">Car Checklist</a>
-                <a href="petlist.html" class="main-btn">Pet Checklist</a>
-                <a href="threats.html" class="main-btn">Threats</a>
-                <a href="local-contacts.html" class="main-btn">Local Contacts</a>
-            </div> 
-            <div id="ready-list">
+            <div id="threatlist">
+                <ul data-role="listview" data-theme="b">
+                {{each item in it.object_list}}
+                    <li><a href="{{=item.url}}">{{=item.title}}</a></li>
+                {{/each}}
+                </ul>
             </div>
         </div>
         <div data-role="footer" data-position="fixed">
