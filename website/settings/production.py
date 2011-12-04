@@ -7,6 +7,7 @@ urlparse.uses_netloc.append('postgres')
 urlparse.uses_netloc.append('mysql')
 try:
     url = urlparse.urlparse(os.environ['DATABASE_URL'])
+    DATABASES = {}
     DATABASES['default'] = {
         'NAME':     url.path[1:],
         'USER':     url.username,
