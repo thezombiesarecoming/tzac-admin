@@ -11,6 +11,9 @@ class Notification(models.Model):
     subject = models.CharField(max_length=200)
     body = models.TextField()
 
+    def __unicode__(self):
+        return self.subject
+
     def post_to_couch(self):
         if not hasattr(settings, "NOTIFICATION_ENDPOINT"):
             return
