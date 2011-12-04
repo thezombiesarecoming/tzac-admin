@@ -27,4 +27,4 @@ def post_to_couch_signal(sender, instance=None, created=None, **kwargs):
         instance.post_to_couch()
 
 
-post_save(post_to_couch_signal, sender=Notification)
+post_save.connect(post_to_couch_signal, sender=Notification)
