@@ -110,7 +110,7 @@ function makeReplaceable(){
     $(".replace-content").live('click',function(event,data){
          event.preventDefault();
          $.get($(this).attr('href'),function(res){
-              $(".ui-content").html(res);
+              $(".ui-content").html(res).trigger("create");
           });
           return false;
     });      
