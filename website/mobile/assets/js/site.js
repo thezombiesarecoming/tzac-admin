@@ -70,6 +70,6 @@ wilco.saveChecklist = function(store) {
 $( '#ready' ).live( 'pageinit',function(event,data){
     var theList = doT.template($("#ready-list-template").html());
   $.get("/section/2/",function(res){
-      $("#ready-list").html(theList(res));
+      $("#ready-list").html(theList(res)).trigger('create');
   })
 });
