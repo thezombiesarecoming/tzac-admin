@@ -72,6 +72,7 @@ $( '#ready' ).live( 'pageinit',function(event,data){
   $.get("/section/2/",function(res){
       $("#ready-list").html(theList(res)).trigger('create');
   })
+  makeReplaceable();
 });
 
 $( '#info' ).live( 'pageinit',function(event,data){
@@ -79,6 +80,7 @@ $( '#info' ).live( 'pageinit',function(event,data){
   $.get("/section/3/",function(res){
       $("#infolist").html(theList(res)).trigger('create');
   })
+  makeReplaceable();
 });
 
 $( '#threats' ).live( 'pageinit',function(event,data){
@@ -86,6 +88,7 @@ $( '#threats' ).live( 'pageinit',function(event,data){
   $.get("/section/1/",function(res){
       $("#threatlist").html(theList(res)).trigger('create');
   })
+  makeReplaceable();
 });
 
 $( '#home' ).live( 'pageinit',function(event,data){
@@ -95,12 +98,11 @@ $( '#home' ).live( 'pageinit',function(event,data){
   })
 });
 
-$(document).live( 'pageinit',function(event,data){
+function makeReplaceable(){
     $(".replace-content").live('click',function(event,data){
          event.preventDefault();
          $.get("someurl",function(res){
               $(".ui-content").html(res);
           })
-    });
-      
-});
+    });      
+}
