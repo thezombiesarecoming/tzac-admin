@@ -18,7 +18,7 @@ class Contact(models.Model):
     type = models.ForeignKey(Type)
     address = models.TextField()
     phone = models.CharField(max_length=20)
-    active = models.BooleanField()
+    active = models.BooleanField(default=True)
 
     lon = models.FloatField()
     lat = models.FloatField()
