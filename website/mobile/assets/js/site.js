@@ -68,21 +68,21 @@ wilco.saveChecklist = function(store) {
 };
 
 $( '#ready' ).live( 'pageinit',function(event,data){
-    var theList = doT.template($("#ready-list-template").html().replace("%7B","{").replace("%7D","}"));
+    var theList = doT.template($("#ready-list-template").html().replace(/\%7B/g,"{").replace(/\%7D/g,"}"));
   $.get("/section/2/",function(res){
       $("#ready-list").html(theList(res)).trigger('create');
   })
 });
 
 $( '#info' ).live( 'pageinit',function(event,data){
-    var theList = doT.template($("#infolist").html().replace("/\%7B/g","{").replace("/\%7D/g","}"));
+    var theList = doT.template($("#infolist").html().replace(/\%7B/g,"{").replace(/\%7D/g,"}"));
   $.get("/section/3/",function(res){
       $("#infolist").html(theList(res)).trigger('create');
   })
 });
 
 $( '#threats' ).live( 'pageinit',function(event,data){
-    var theList = doT.template($("#threatlist").html().replace("%7B","{").replace("%7D","}"));
+    var theList = doT.template($("#threatlist").html().replace(/\%7B/g,"{").replace(/\%7D/g,"}"));
   $.get("/section/1/",function(res){
       $("#threatlist").html(theList(res)).trigger('create');
   })
