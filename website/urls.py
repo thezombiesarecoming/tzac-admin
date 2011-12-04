@@ -25,5 +25,6 @@ urlpatterns = patterns('',
 
     url(r'^page/', include('tzac.urls')),
     url(r'^section/', include('tzac_sections.urls')),
+    url(r'^contacts/', include('tzac_contacts.urls')),
     url(r'^api/', include(v1_api.urls)),
 )

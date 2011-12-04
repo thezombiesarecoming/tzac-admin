@@ -1,4 +1,5 @@
 from django.db import models
+import json
 
 from tzac.models import TitleMixin
 
@@ -13,7 +14,7 @@ class City(TitleMixin, models.Model):
 
 class Contact(models.Model):
     name = models.CharField(max_length=200)
-    city = models.ForeignKey(City)
+    city = models.ForeignKey(City, related_name="contacts")
     type = models.ForeignKey(Type)
     address = models.TextField()
     phone = models.CharField(max_length=20)
@@ -21,3 +22,12 @@ class Contact(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "city": str(self.city),
+            "type": str(self.type),
+            "address": self.address,
+            "phone": self.phone,
+        }
