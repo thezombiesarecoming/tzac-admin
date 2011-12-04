@@ -96,7 +96,7 @@ $( '#home' ).live( 'pageinit',function(event,data){
 });
 
 $(document).live( 'pageinit',function(event,data){
-    $(".replace-contact").live('click',function(event,data){
+    $(".replace-content").live('click',function(event,data){
          event.preventDefault();
          $.get("someurl",function(res){
               $(".ui-content").html(res);
