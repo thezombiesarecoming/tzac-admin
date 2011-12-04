@@ -104,5 +104,6 @@ function makeReplaceable(){
          $.get($(this).attr('href'),function(res){
               $(".ui-content").html(res);
           });
+          return false;
     });      
 }
