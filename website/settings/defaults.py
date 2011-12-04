@@ -13,6 +13,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 from .helpers import project_dir
+ADMIN_TOOLS_INDEX_DASHBOARD = 'website.dashboard.CustomIndexDashboard'
 
 
 DATABASES = {
